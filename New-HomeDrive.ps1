@@ -1,5 +1,10 @@
+<#
+  New-HomeDrive, v1
+  Developed by Arjun Dhanjal
+#>
+
 PARAM(
-$Alias
+  $Alias
 )
 
 $AccountName=$Alias
