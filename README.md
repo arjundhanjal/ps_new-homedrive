@@ -20,4 +20,4 @@ This script is written to integrate with Active Directory, and thus will only wo
 
 4. Mapping the drive
 
-   Finally, the script will add `$AccountName` to `$ADGroup`, which allows for the potential to map the user's home drive to a network share upon login. This drive mapping functionality is not included in the script, though. For this part to work, the system administrator must first create a Group Policy Object (GPO) which maps `\\$HomeDirectory` to `%username%` for members of `$ADGroup`. 
+   Finally, the script will add `$AccountName` to `$ADGroup`, which allows for the potential to map the user's home drive to a network share upon login. This drive mapping functionality is not included in the script, though. For this part to work, the system administrator must first create a Group Policy Object (GPO) which maps `\\$HomeDirectory` to `$HomeDrive` for `%username%`, a member of `$ADGroup`. 
