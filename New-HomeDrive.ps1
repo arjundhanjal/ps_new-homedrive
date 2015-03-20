@@ -31,7 +31,7 @@ $AccountName=$Alias
 
 # Set paramaters for access rule
 
-    $FileSystemAccessRights=[System.Security.AccessCOntrol.FileSystemRights]"FullControl"
+    $FileSystemAccessRights=[System.Security.AccessControl.FileSystemRights]"FullControl"
     $InheritanceFlags=[System.Security.AccessControl.InheritanceFlags]"ContainerInherit, ObjectInherit"
     $PropagationFlags=[System.Security.AccessControl.PropagationFlags]"None"
     $AccessControl=[System.Security.AccessControl.AccessControlType]"Allow"
