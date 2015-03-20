@@ -12,7 +12,7 @@ $AccountName=$Alias
 #Assign the drive letter and home drive for a user in Active Directory
 
     $HomeDrive='U:'
-    $UserRoot='\\NEBULA.ramp.dhanjalserver.arjundhanjal.com\USERDATA$\'
+    $UserRoot='\\RAMPDC01.ramp.dhanjalserver.arjundhanjal.com\USERDATA$\'
     $HomeDirectory=$UserRoot+$AccountName
 
 #Add home drive information to Active Directory profile
