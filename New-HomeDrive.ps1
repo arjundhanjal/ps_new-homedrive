@@ -19,9 +19,10 @@
 #>
 
 PARAM(
-  $AccountName
+  [Parameter(Mandatory=$true)]
+    [string]$AccountName
 )
- 
+
 # Importing ActiveDirectory PS module
 
     Import-Module ActiveDirectory
