@@ -20,7 +20,7 @@
 
 PARAM(
   [Parameter(Mandatory=$true)]
-    [string]$AccountName
+    [string]$AccountNam
 )
 
 # Importing ActiveDirectory PS module
