@@ -21,7 +21,7 @@
 PARAM(
   $AccountName
 )
-
+ 
 # Importing ActiveDirectory PS module
 
     Import-Module ActiveDirectory
