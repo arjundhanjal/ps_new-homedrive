@@ -19,10 +19,8 @@
 #>
 
 PARAM(
-  $Alias
+  $AccountName
 )
-
-$AccountName=$Alias
 
 # Importing ActiveDirectory PS module
 
@@ -36,7 +34,7 @@ $AccountName=$Alias
 
 # Adding home drive information to Active Directory profile
 
-    # Set-ADUser $Alias -HomeDrive $HomeDrive -HomeDirectory $HomeDirectory
+    # Set-ADUser $AccountName -HomeDrive $HomeDrive -HomeDirectory $HomeDirectory
 
 # Creating the folder on the root of the common USERDATA share
 
