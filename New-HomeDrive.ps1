@@ -30,7 +30,7 @@ PARAM(
 # Assigning the drive letter and home drive for a user in Active Directory
 
     $HomeDrive='U:'
-    $UserRoot='\\RAMPDC01.ramp.dhanjalserver.arjundhanjal.com\USERDATA$\'
+    $UserRoot='\\SERVER.path.fqdn\CommonUserShare\'
     $HomeDirectory=$UserRoot+$AccountName
 
 # Adding home drive information to Active Directory profile
@@ -40,7 +40,7 @@ PARAM(
 # Creating the folder on the root of the common USERDATA share
 
     New-Item -Path $HomeDirectory -Type Directory -Force
-    $Domain='RAMP'
+    $Domain='DOMAIN'
     $IdentityReference=$Domain+'\'+$AccountName
 
 # Setting paramaters for access rule
