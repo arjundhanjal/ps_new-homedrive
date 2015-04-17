@@ -40,7 +40,7 @@ PARAM(
 # Creating the folder on the root of the common USERDATA share
 
     New-Item -Path $HomeDirectory -Type Directory -Force
-    $Domain=[Environment]::UserDomainName
+    $Domain=[Environment]::UserDomainNam
     $IdentityReference=$Domain+'\'+$AccountName
 
 # Setting paramaters for access rule
