@@ -23,7 +23,7 @@ PARAM(
     [string]$AccountName
 )
 
-# Importing ActiveDirectory PS module
+# Importing ActiveDirectory PS modulet. Just in case.
 
     Import-Module ActiveDirectory
 
@@ -34,6 +34,8 @@ PARAM(
     $HomeDirectory=$UserRoot+$AccountName
 
 # Adding home drive information to Active Directory profile
+# This may conflict with the GPO mappings below; only really necessary
+# for OS X clients bound to AD.
 
     # Set-ADUser $AccountName -HomeDrive $HomeDrive -HomeDirectory $HomeDirectory
 
@@ -61,6 +63,8 @@ PARAM(
     Set-ACL -Path $HomeDirectory -AclObject $HomeFolderACL
 
 # Adding user to MAP-UserDrive group. This will invoke a GPO to map the user's home directory to U:\ upon login.
+# The correct GPO setting for this is located under User Configuration > Preferences > Windows Settings > Drive Maps
+# Location should be set to \\SERVER.path.fqdn\CommonUserShare\%LogonUser%
 
     $ADGroup = "MAP-UserDrive"
     Add-ADGroupMember -Identity $ADGroup -Member $AccountName
