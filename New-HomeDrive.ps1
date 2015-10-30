@@ -33,12 +33,6 @@ PARAM(
     $UserRoot='\\SERVER.path.fqdn\CommonUserShare\'
     $HomeDirectory=$UserRoot+$AccountName
 
-# Adding home drive information to Active Directory profile
-# This may conflict with the GPO mappings below; only really necessary
-# for OS X clients bound to AD.
-
-    # Set-ADUser $AccountName -HomeDrive $HomeDrive -HomeDirectory $HomeDirectory
-
 # Creating the folder on the root of the common USERDATA share
 
     New-Item -Path $HomeDirectory -Type Directory -Force
@@ -61,6 +55,13 @@ PARAM(
     $HomeFolderACL=Get-ACL $HomeDirectory
     $HomeFolderACL.AddAccessRule($AccessRule)
     Set-ACL -Path $HomeDirectory -AclObject $HomeFolderACL
+
+# Adding home drive information to Active Directory profile
+# This may conflict with the GPO mappings below; only use one
+# of these two methods to set the drive letter for the home drive
+# otherwise the path will be mapped twice.
+
+  # Set-ADUser $AccountName -HomeDrive $HomeDrive -HomeDirectory $HomeDirectory
 
 # Adding user to MAP-UserDrive group. This will invoke a GPO to map the user's home directory to U:\ upon login.
 # The correct GPO setting for this is located under User Configuration > Preferences > Windows Settings > Drive Maps
