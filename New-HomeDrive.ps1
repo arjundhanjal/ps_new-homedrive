@@ -58,7 +58,7 @@ PARAM(
 
 # Adding home drive information to Active Directory profile
 # This may conflict with the GPO mappings below; only use one
-# of these two methods to set the drive letter for the home drive
+# of the below two methods to set the drive letter for the home drive
 # otherwise the path will be mapped twice.
 
   # Set-ADUser $AccountName -HomeDrive $HomeDrive -HomeDirectory $HomeDirectory
